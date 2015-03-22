@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -44,3 +44,34 @@ group :development, :test do
   gem 'spring'
 end
 
+# Added packages
+
+gem 'puma'
+gem 'active_model_serializers'
+
+group :development do
+  gem 'guard-rspec'
+  gem 'libnotify'
+  gem 'spring-commands-rspec'
+end
+
+group :development, :test do
+  gem 'dotenv-rails'
+  gem 'factory_girl_rails'
+  gem 'pry-rails'
+  gem 'rspec-rails'
+end
+
+group :production do
+  gem 'rails_12factor'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'launchy'
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
+  gem 'simplecov', require: false
+end
