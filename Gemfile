@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2'
+ruby '2.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -51,7 +51,7 @@ gem 'active_model_serializers'
 
 group :development do
   gem 'guard-rspec'
-  gem 'libnotify'
+  gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
   gem 'spring-commands-rspec'
 end
 
