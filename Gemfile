@@ -52,6 +52,10 @@ gem 'active_model_serializers'
 # Bootstrap stylesheet
 gem 'bootstrap-sass'
 
+# Haml for templates
+gem 'haml'
+gem 'haml-rails'
+
 group :development do
   gem 'guard-rspec'
   gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
