@@ -38,13 +38,23 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.7)
+    addressable (2.3.8)
     arel (6.0.0)
+    autoprefixer-rails (5.1.8)
+      execjs
+      json
     bcrypt (3.1.10)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.4.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.2.2)
-    byebug (4.0.3)
+    byebug (4.0.4)
       columnize (= 0.9.0)
     capybara (2.4.4)
       mime-types (>= 1.16)
@@ -113,8 +123,8 @@ GEM
     json (1.8.2)
     launchy (2.4.3)
       addressable (~> 2.3)
-    listen (2.9.0)
-      celluloid (>= 0.15.2)
+    listen (2.10.0)
+      celluloid (~> 0.16.0)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     loofah (2.0.1)
@@ -143,10 +153,12 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-rails (0.3.3)
+    pry-rails (0.3.4)
       pry (>= 0.9.10)
     puma (2.11.1)
       rack (>= 1.1, < 2.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -270,6 +282,8 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   bcrypt (~> 3.1.7)
+  better_errors
+  bootstrap-sass
   byebug
   capybara
   coffee-rails (~> 4.1.0)
@@ -285,6 +299,7 @@ DEPENDENCIES
   poltergeist
   pry-rails
   puma
+  quiet_assets
   rails (= 4.2.1)
   rails_12factor
   rspec-rails

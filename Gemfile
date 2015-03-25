@@ -49,6 +49,9 @@ end
 gem 'puma'
 gem 'active_model_serializers'
 
+# Bootstrap stylesheet
+gem 'bootstrap-sass'
+
 group :development do
   gem 'guard-rspec'
   gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
@@ -56,6 +59,8 @@ group :development do
 end
 
 group :development, :test do
+  gem 'better_errors'
+  gem 'quiet_assets'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'pry-rails'
