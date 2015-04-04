@@ -48,6 +48,7 @@ end
 
 gem 'puma'
 gem 'active_model_serializers'
+gem 'devise'
 
 # Bootstrap stylesheet
 gem 'bootstrap-sass'
@@ -69,6 +70,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'rubocop', require: false
 end
 
 group :production do
