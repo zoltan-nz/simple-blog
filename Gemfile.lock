@@ -324,7 +324,6 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara
-  coffee-rails (~> 4.1.0)
   database_cleaner
   devise
   dotenv-rails
