@@ -1,0 +1,57 @@
+@import bootstrap-sprockets
+@import bootstrap
+@import posts
+@import sessions
+
+body
+  padding-top: 20px
+
+.navbar-inverse
+  background-color: rgba(0,0,0,0.65)
+  border-color: rgba(0,0,0,0.1)
+  .navbar-toggle
+    background-color: rgba(0,0,0,0.2)
+    border-color: rgba(0,0,0,0.1)
+  .navbar-brand
+    color: #aaa
+  .navbar-nav
+    li
+      a
+        color: #aaa
+      .active
+        color: #fff!important
+
+.image-holder
+  height: 1000px
+  background-image: image-url('jumbotron_bg.jpg')
+  background-position: center top
+  background-repeat: no-repeat
+  background-size: cover
+  position: fixed
+  top: 0
+  display: block
+  width: 100%
+  z-index: -1000
+  opacity: 0.5
+
+.jumbotron
+  background: rgba(0,0,0,0.65)
+  color: #ddd
+  border-bottom: 1px solid rgba(229,229,229,0.75)
+
+.box
+  position: relative
+  background: rgba(255,255,255,0.1)
+  display: block
+  padding: 50px
+
+.text
+  font-size: 15px
+  line-height: 20px
+  margin-bottom: 20px
+  min-height: 100px
+
+.footer
+  color: #aaa
+  a
+    color: #aaa

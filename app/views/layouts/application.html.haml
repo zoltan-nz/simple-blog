@@ -6,8 +6,11 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
-    = render 'layouts/header'
+  %body{class: controller_name}
     .container
+      = render 'layouts/header'
       = yield
-    = render 'layouts/footer'
+      = render 'layouts/footer'
+
+    - if ['sessions', 'passwords'].include?(controller_name)
+      .image-holder

@@ -17,11 +17,17 @@ ActiveRecord::Schema.define(version: 20150405232818) do
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
+    t.string   "image"
     t.string   "title"
-    t.string   "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "tagline"
+    t.string   "url"
+    t.integer  "sort_order"
+    t.datetime "scheduled_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
+
+  add_index "posts", ["scheduled_at", "sort_order"], name: "index_posts_on_scheduled_at_and_sort_order", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

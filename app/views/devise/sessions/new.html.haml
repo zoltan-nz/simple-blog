@@ -1,17 +1,22 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.jumbotron
+  .row
+    .col-md-8.col-md-offset-2
+      %h1.text-center Log in
+  .row
+    .col-md-8.col-md-offset-2
+      .box
+        =form_for resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal'} do |f|
+          .form-group.form-group-lg
+            =f.email_field :email, class: 'form-control input-lg', autofocus: true, placeholder: 'E-mail address'
+          .form-group.form-group-lg
+            =f.password_field :password, class: 'form-control input-lg', autocomplete: 'off', placeholder: 'Password'
+          - if devise_mapping.rememberable?
+            .form-group
+              .checkbox
+                %label
+                  = f.check_box :remember_me
+                  Remember me
+          .form-group.form-group-lg
+            = f.submit 'Log in', class: 'btn btn-warning btn-lg btn-block'
+        .extra-links.pull-right
+          = render "devise/shared/links"
