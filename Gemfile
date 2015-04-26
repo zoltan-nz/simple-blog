@@ -52,6 +52,10 @@ gem 'bootstrap-sass'
 gem 'haml'
 gem 'haml-rails'
 
+gem 'faker'
+
+gem 'aws-sdk'
+
 group :development do
   gem 'guard-rspec'
   gem 'spring-commands-rspec'
@@ -74,7 +78,6 @@ end
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'faker'
   gem 'launchy'
   gem 'poltergeist'
   gem 'selenium-webdriver'

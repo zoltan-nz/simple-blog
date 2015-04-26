@@ -9,6 +9,7 @@
     %ul.nav.navbar-nav
       - if user_signed_in?
         %li=link_to 'Home', root_path, class: ('active' if controller_name == 'posts')
+        %li=link_to 'Publishing', publisher_path, class: ('active' if controller_name == 'publisher')
     %ul.nav.navbar-nav.navbar-right
       - if user_signed_in?
         %li=link_to('Logout', destroy_user_session_path, method: :delete)

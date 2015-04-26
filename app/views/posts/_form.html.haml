@@ -1,19 +1,27 @@
-= form_for(@post) do |f|
-  - if @post.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@post.errors.count, "error")
-        prohibited this post from being saved:
-      %ul
-        - @post.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :title
-    %br/
-    = f.text_field :title
-  .field
-    = f.label :body
-    %br/
-    = f.text_field :body
-  .actions
-    = f.submit
+.row
+  .col-md-8.col-md-offset-2
+    =form_for @post, html: {class: 'form-horizontal'} do |f|
+      .form-group.form-group-lg
+        =f.label :image, 'Image:', class: 'col-sm-2 control-label'
+        .col-sm-10
+          =f.text_field :image, class: 'form-control input-lg', autofocus: true, placeholder: 'Image url'
+      .form-group.form-group-lg
+        =f.label :title, 'Title:', class: 'col-sm-2 control-label'
+        .col-sm-10
+          =f.text_field :title, class: 'form-control input-lg', placeholder: 'Title'
+      .form-group.form-group-lg
+        =f.label :tagline, 'Tagline:', class: 'col-sm-2 control-label'
+        .col-sm-10
+          =f.text_field :tagline, class: 'form-control input-lg', placeholder: 'Tagline'
+      .form-group.form-group-lg
+        =f.label :url, 'Url:', class: 'col-sm-2 control-label'
+        .col-sm-10
+          =f.text_field :url, class: 'form-control input-lg', placeholder: 'Url'
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          =button_tag 'Reset', type: :reset, class: 'btn'
+          =f.submit (@post.new_record? ? 'Create' : 'Update'), class: 'btn btn-success'
+.row
+  .col-md-12
+    .well.well-small
+      =link_to '<< Back to the list', posts_path

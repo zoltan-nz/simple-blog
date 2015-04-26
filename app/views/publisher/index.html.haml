@@ -1,0 +1,22 @@
+%h1 Publishing
+
+%h3 Preview of generated JSON file
+
+.well
+  %code
+    = @json
+
+%h3 Upload
+
+.well
+  .row
+    .col-md-10
+      Double check JSON code above. Clicking on Publish button will upload the code to Amazon AWS and the content will be published immediately.
+    .col-md-2
+      =link_to 'Publish', publisher_upload_path, class: 'btn btn-danger btn-lg pull-right'
+
+%h3 Amazon AWS content
+
+.well
+  Link to the uploaded JSON file:
+  %a{href: ENV['S3_URL']} Link

@@ -1,0 +1,21 @@
+%table.table.table-bordered.table-hover.posts-list
+
+  %thead
+    %th #
+    %th Image
+    %th Title
+    %th Tagline
+    %th Url
+    %th.column-actions Actions
+
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td=post.id
+        %td=post.image
+        %td=post.title
+        %td=post.tagline
+        %td=post.url
+        %td.text-right.column-actions
+          =link_to 'Edit', edit_post_path(post), class: 'btn btn-success'
+          =link_to 'X', post_path(post), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'
